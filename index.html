@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Patrix | Bootstrap 5 Landing Page</title>
+    <title>DyploFest 2022</title>
+    <link rel="icon" href="images/dyploLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -56,9 +57,14 @@
             En Málaga, este mayo.
           </span>
         </h1>
-        <button type="button" class="rounded-pill btn-rounded" onClick="document.getElementById('services').scrollIntoView();">Saber más
-          <span><i class="fas fa-arrow-down"></i></span>
-        </button>
+        <div class="d-flex">
+          <button type="button" class="rounded-pill btn-rounded" onClick="document.getElementById('services').scrollIntoView();">Saber más
+            <span><i class="fas fa-arrow-down"></i></span>
+          </button>
+          <button disabled type="button" class="rounded-pill btn-rounded" style="margin-left: 2%;">Tickets próximamente
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
       </div>
       <!-- START THE CONTENT FOR THE VIDEO -->
       <div class="col-md-6 intros text-end">
@@ -75,6 +81,9 @@
                          START SECTION 4 - THE SERVICES  
 ///////////////////////////////////////////////////////////////////////////////////////////////////-->
 <section id="services" class="services">
+  <div class="pt-5 mt-5">
+
+  </div>
   <div class="container">
     <div class="row text-center">
       <h1 class="display-3 fw-bold">Sobre el DyploFest</h1>
@@ -87,19 +96,19 @@
           <h2 class="fw-bold text-center">
             ¿Qué es?
           </h2>
+
+          <div class="container justify-content-center align-items-center d-flex">
+            <img width="50%" src="images/dyploLogo.png" alt="Logo del DyploFest">
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="bg-white p-4 text-start">
           <p class="lh-lg">
-            DyploFest es un evento centrado en las interfaces de usuario. Esto incluye temáticas tales como: 
-            <ul class="lh-lg">
-              <li>Programación frontend</li>
-              <li>Desarrollo de Interfaces Móviles</li>
-              <li>Interfaces de Usuario a través de la pantalla</li>
-              <li>Interfaces de Usuario alternativas (como chatbots)</li>
-              <li>... ¡y mucho más!</li>
-            </ul>
+            DyploFest es un evento centrado en las interfaces de usuario. Desde el desarrollo
+            frontend hasta el uso de interfaces no visuales como puede ser los asistentes de voz,
+            esperamos poder tomar nuevas perspectivas en un tema que todos damos por sentado pero del 
+            que pocos ven en su día a día, trabajando para que cualquiera pueda usar las tecnologías.
           </p>
         </div>
       </div>
@@ -113,13 +122,11 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
           <div class="icon d-block fas fa-paper-plane"></div>
-          <h3 class="display-3--title mt-1">¿Qué queremos?</h3>
+          <h3 class="display-3--title mt-1">Las charlas y las Interfaces de Usuario</h3>
           <p class="lh-lg">
-            Buscamos dar a conocer aspectos
-            menos convencionales de las interfaces de usuario. Queremos reunir a 
-            empresas, profesionales y estudiantes para que hagan crecer sus redes
-            de contactos y encuentren sinergias y oportunidades que les hagan crecer
-            profesional y personalmente.
+            Aprende montones de temas en un único track con nuestras charlas y talleres de temáticas
+            relacionadas con este mundillo. Web, Accesibilidad, Diseño, Android... Solo es cuestion de venir y
+            aprovechar para saber más.
           </p>
         </div>
       </div>
@@ -139,11 +146,11 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
           <div class="icon d-block fas fa-code"></div>
-          <h3 class="display-3--title mt-1">¿Y qué buscamos para vosotr@s?</h3>
+          <h3 class="display-3--title mt-1">Networking</h3>
           <p class="lh-lg">
             El evento busca crear un punto de encuentro entre profesionales,
-            empresas y estudiantes inquietos del sector de la informatica. <br>
-            Nuestros asistentes buscan saciar sus ganas de conocimiento y hacer 
+            empresas y estudiantes inquietos del sector de la informatica.
+            Por otra parte,nuestros asistentes buscan saciar sus ganas de conocimiento y hacer 
             nuevos contactos con empresas para buscar nuevas oportunidades.
           </p>
         </div>
@@ -223,10 +230,10 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
   <div class="container">
     <div class="row text-center text-white">
-      <h1 class="display-3 fw-bold">¿Dónde va a ser?</h1>
+      <h1 class="display-3 fw-bold">El lugar</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
       <p class="lead pt-1">Escuela Técnica Superior de Ingeniería Informática</p>
-      <p class="lead ">Bulevar Louis Pasteur s/n</p>
+      <p class="lead ">Bulevar Louis Pasteur 35</p>
       <p class="lead ">29071 Málaga</p>
       <div class="row align-items-center">
         <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=36.714927011092804,-4.478008013850054+(ETS%20de%20Ingenier%C3%ADa%20Inform%C3%A1tica)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"><a href="https://www.gps.ie/marine-gps/">navigation gps</a></iframe></div>
@@ -314,6 +321,7 @@
               START SECTION 8 - GET STARTED  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <section id="contact" class="get-started">
+  <div class="pt-2 mt-2"></div>
   <div class="container">
     <div class="row text-center">
       <h1 class="display-3 fw-bold text-capitalize">¿Cómo puedo participar?</h1>
@@ -391,11 +399,11 @@
           </a>
       </div>
         <div class="col-lg-7 col-md-6">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com/@gdscmalaga"><i class="fab fa-tiktok"></i></a>
+          <a href="https://twitter.com/DscMalaga"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UCt-MlbQ6LwSlYTIF2OLDZig"><i class="fab fa-youtube"></i></a>
+          <a href="https://discord.gg/stHC3DTpAq"><i class="fab fa-discord"></i></a>
+          <a href="https://www.instagram.com/gdscmalaga/"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -410,11 +418,11 @@
           </a>
         </div>
         <div class="col-lg-7 col-md-6">
-          <a href="#"><i class="fab fa-wordpress"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://developer-student-clubs-ugr.github.io/WebTemplate2021/"><i class="fab fa-wordpress"></i></a>
+          <a href="https://twitter.com/GDSC_Granada"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/DeveloperStudentClubsUGR"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/company/gdsc-ugr"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/gdsc_granada/"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -424,23 +432,13 @@
   <div class="container mt-5">
     <div class="row text-white justify-content-center mt-3 pb-3">
       <div class="col-12 col-sm-6 col-lg-6 mx-auto">
-        <h5 class="text-capitalize fw-bold">Logo Dyplofest</h5>
+        <h5 class="text-capitalize fw-bold">Dyplofest</h5>
         <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <p class="lh-lg">
-         
-        </p>
+        <div class="container d-flex">
+          <img width="25%" src="images/dyploLogo.png" alt="">
+        </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
-        <h5 class="text-capitalize fw-bold">Products</h5>
-        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <ul class="list-inline campany-list">
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
+      <div class="col-12 col-sm-6 col-lg-4 mb-4 mx-auto">
         <h5 class="text-capitalize fw-bold">Links de ayuda</h5>
         <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
         <ul class="list-inline campany-list">
@@ -448,16 +446,6 @@
           <li><a href="#">Call for Papers / Sé un speaker</a></li>
           <li><a href="#">Call for Volunteers / Sé un voluntario</a></li>
           <li><a href="#">Call for Sponsors / Conviértete en Sponsor</a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
-        <h5 class="text-capitalize fw-bold">contact</h5>
-        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <ul class="list-inline campany-list">
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
         </ul>
       </div>
     </div>
@@ -469,7 +457,7 @@
       <div class="row text-center text-white">
         <div class="col-12">
           <div class="footer-bottom__copyright">
-            &COPY; Copyright 2022 <a href="#">GDSC Málaga</a> | Creado con 💚 por <a href="" target="_blank">GDSC Granada</a><br><br>
+            &COPY; Copyright 2022 <a href="https://linktr.ee/gdscuma">GDSC Málaga</a> | Creado con 💚 por <a href="https://developer-student-clubs-ugr.github.io/WebTemplate2021/" target="_blank">GDSC Granada</a><br><br>
 
             Basado en el tema Patrix de <a href="http://themewagon.com" target="_blank">ThemeWagon</a>
           </div>
