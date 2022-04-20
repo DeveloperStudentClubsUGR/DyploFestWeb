@@ -19,7 +19,7 @@
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
-  --bs-pink: #1ada6a;
+  --bs-pink: #d63384;
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
@@ -275,7 +275,7 @@ pre code {
 
 code {
   font-size: 0.875em;
-  color: #1ada6a;
+  color: #d63384;
   word-wrap: break-word;
 }
 a > code {
@@ -670,15 +670,15 @@ progress {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 .row > * {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
 }
 
@@ -6367,15 +6367,15 @@ textarea.form-control-lg {
 }
 
 .ratio-4x3 {
-  --bs-aspect-ratio: calc(3 / 4 * 100%);
+  --bs-aspect-ratio: 75%;
 }
 
 .ratio-16x9 {
-  --bs-aspect-ratio: calc(9 / 16 * 100%);
+  --bs-aspect-ratio: 56.25%;
 }
 
 .ratio-21x9 {
-  --bs-aspect-ratio: calc(9 / 21 * 100%);
+  --bs-aspect-ratio: 42.8571428571%;
 }
 
 .fixed-top {
@@ -11254,19 +11254,19 @@ textarea.form-control-lg {
 }
 
 .menu {
-  background: linear-gradient(to right, rgba(24, 140, 14, 0.95), rgba(26, 218, 106, 0.95));
+  background-color: #fff;
 }
 .menu li {
   padding: 0 0.7rem;
 }
 .menu li a {
-  color: #fff;
+  color: rgb(66, 66, 66);
   padding: 0 0.7rem;
   text-transform: capitalize;
   font-weight: 600;
 }
 .menu li:hover {
-  color: #fff;
+  color: darkslategray;
 }
 
 .intro-section {
@@ -11471,7 +11471,7 @@ textarea.form-control-lg {
 }
 .cta-info__list li::before {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "\f00c";
   font-weight: 600;
   margin-right: 0.5rem;
   font-size: 1.2rem;
