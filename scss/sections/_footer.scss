@@ -1,6 +1,11 @@
 @use '../custom' as *;
 @use '../components/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 
+.amatic{
+    font-family: 'Amatic SC';
+    font-size: xx-large;
+}
 
 .footer {
     padding-top: 1rem;
