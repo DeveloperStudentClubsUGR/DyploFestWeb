@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="assets/js/localization.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="loadLocale()">
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                START SECTION 1 - THE NAVBAR SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <nav class="navbar navbar-light navbar-expand-lg navbar menu shadow fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="#">
         <img src="images/Nuevo_proyecto3.png" height="80px" alt="logo image">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,13 +27,22 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">El DyploFest</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">El Lugar</a></li>
-          </li>
+          <li class="nav-item locale" id="change-locale-es"><a class="nav-link" onclick="changeLocale()">EN</a></li>
+          <li class="nav-item locale" id="change-locale-en"><a class="nav-link" onclick="changeLocale()">ES</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li class="nav-item locale" id="dyplofest-link-es"><a class="nav-link" href="#services">El DyploFest</a></li>
+          <li class="nav-item locale" id="venue-link-es"><a class="nav-link" href="#testimonials">El Lugar</a></li>
+          <li class="nav-item locale" id="dyplofest-link-en"><a class="nav-link" href="#services">DyploFest</a></li>
+          <li class="nav-item locale" id="venue-link-en"><a class="nav-link" href="#testimonials">The Venue</a></li>
         </ul>
-        <button type="button" class="rounded-pill btn-rounded border-primary" onClick="document.getElementById('contact').scrollIntoView();">
+        <button type="button" class="rounded-pill btn-rounded border-primary locale" id="btn-nav-es" onClick="document.getElementById('contact').scrollIntoView();">
           ¿Cómo puedo participar?
+          <span>
+            <i class="fas fa-question"></i>
+          </span>
+        </button>
+        <button type="button" class="rounded-pill btn-rounded border-primary locale" id="btn-nav-en" onClick="document.getElementById('contact').scrollIntoView();">
+          How can I collab?
           <span>
             <i class="fas fa-question"></i>
           </span>
@@ -52,13 +62,20 @@
       <div class="col-md-6 intros text-start">
         <h1 class="display-2">
           <span class="display-2--intro">DyploFest 2022</span>
-          <span class="display-2--description lh-base">
+          <span class="display-2--description lh-base locale" id="subtitle-intro-es">
             Tu evento de Interfaces de Usuario y desarrollo de Experiencias. <br>
             En Málaga, este Junio.
           </span>
+          <span class="display-2--description lh-base locale" id="subtitle-intro-en">
+            Your User Interfaces and Experience development event. <br>
+            At Malaga, this June.
+          </span>
         </h1>
         <div class="d-flex">
-          <button disabled type="button" class="rounded-pill btn-rounded" style="margin-left: 2%;">Tickets próximamente
+          <button disabled type="button" class="rounded-pill btn-rounded locale" id="tickets-btn-es" style="margin-left: 2%;">Tickets próximamente
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+          <button disabled type="button" class="rounded-pill btn-rounded locale" id="tickets-btn-en" style="margin-left: 2%;">Tickets soon
             <span><i class="fas fa-arrow-right"></i></span>
           </button>
         </div>
@@ -83,15 +100,19 @@
   </div>
   <div class="container">
     <div class="row text-center">
-      <h1 class="display-3 fw-bold">Sobre el DyploFest</h1>
+      <h1 class="display-3 fw-bold locale" id="about-title-es">Sobre el DyploFest</h1>
+      <h1 class="display-3 fw-bold locale" id="about-title-en">About the DyploFest</h1>
       <div class="heading-line mb-1"></div>
     </div>
   <!-- START THE DESCRIPTION CONTENT  -->
     <div class="row pt-2 pb-2 mt-0 mb-3 ">
       <div class="col-md-6 border-right">
         <div class="bg-white p-3">
-          <h2 class="fw-bold text-center">
+          <h2 class="fw-bold text-center locale" id="whats-this-es">
             ¿Qué es?
+          </h2>
+          <h2 class="fw-bold text-center locale" id="whats-this-en">
+            What's this?
           </h2>
 
           <div class="container justify-content-center align-items-center d-flex">
@@ -101,11 +122,16 @@
       </div>
       <div class="col-md-6">
         <div class="bg-white p-4 text-start">
-          <p class="lh-lg">
+          <p class="lh-lg locale" id="about-explanation-es">
             DyploFest es un evento centrado en las interfaces de usuario. Desde el desarrollo
             frontend hasta el uso de interfaces no visuales como puede ser los asistentes de voz,
             esperamos poder tomar nuevas perspectivas en un tema que todos damos por sentado pero del 
             que pocos ven en su día a día, trabajando para que cualquiera pueda usar las tecnologías.
+          </p>
+          <p class="lh-lg locale" id="about-explanation-en">
+            DyploFest is a event whose primary focus is User Interfaces. From Frontend development to non-visual 
+            interfaces such as voice assistants, we're hoping to take new perspectives about this topic we all interiorize
+            but few work to improve those technologies.
           </p>
         </div>
       </div>
@@ -119,11 +145,16 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
           <div class="icon d-block fas fa-paper-plane"></div>
-          <h3 class="display-3--title mt-1">Las charlas y las Interfaces de Usuario</h3>
-          <p class="lh-lg">
+          <h3 class="display-3--title mt-1 locale" id="talks-workshops-title-es">Las charlas y las Interfaces de Usuario</h3>
+          <h3 class="display-3--title mt-1 locale" id="talks-workshops-title-en">Tech Talks and UI</h3>
+          <p class="lh-lg locale" id="talks-workshops-about-es">
             Aprende montones de temas en un único track con nuestras charlas y talleres de temáticas
             relacionadas con este mundillo. Web, Accesibilidad, Diseño, Android... Solo es cuestion de venir y
             aprovechar para saber más.
+          </p>
+          <p class="lh-lg locale" id="talks-workshops-about-en">
+            Learn lots of related topics in a unique track with our talks and workshops related to these 
+            subjects. Web, Accesibility, Design, Android... It's just a matter of coming and learning more about it.
           </p>
         </div>
       </div>
@@ -144,11 +175,17 @@
         <div class="services__content">
           <div class="icon d-block fas fa-code"></div>
           <h3 class="display-3--title mt-1">Networking</h3>
-          <p class="lh-lg">
+          <p class="lh-lg locale" id="networking-about-es">
             El evento busca crear un punto de encuentro entre profesionales,
             empresas y estudiantes inquietos del sector de la informática.
             Por otra parte,nuestros asistentes buscan saciar sus ganas de conocimiento y hacer 
             nuevos contactos con empresas para buscar nuevas oportunidades.
+          </p>
+          <p class="lh-lg locale" id="networking-about-en">
+            The event wants to create a meeting point between professionals,
+            students and enterprises interested at the IT scene. On the other side,
+            our assistants want to saciate their will of learning and make new contacts 
+            with businesses to look for new opportunities.
           </p>
         </div>
       </div>
@@ -164,7 +201,8 @@
 <section id="campanies" class="campanies">
   <div class="container">
     <div class="row text-center">
-      <h4 class="display-3 fw-bold lead mb-3">Organizadores</h4>
+      <h4 class="display-3 fw-bold lead mb-3 locale" id="organizers-title-es">Organizadores</h4>
+      <h4 class="display-3 fw-bold lead mb-3 locale" id="organizers-title-en">Organizers</h4>
       <div class="heading-line mb-5"></div>
     </div>
   </div>
@@ -184,7 +222,8 @@
   </div>
   <div class="container">
     <div class="row text-center">
-      <h4 class="fw-bold lead mb-3">Agradecimientos especiales</h4>
+      <h4 class="fw-bold lead mb-3 locale" id="special-thanks-title-es">Agradecimientos especiales</h4>
+      <h4 class="fw-bold lead mb-3 locale" id="special-thanks-title-en">Special Thanks</h4>
     </div>
   </div>
   <div class="container">
@@ -198,20 +237,28 @@
 
   <div class="container">
     <div class="row text-center">
-      <h4 class="display-3 fw-bold lead mb-3">Patrocinadores</h4>
+      <h4 class="display-3 fw-bold lead mb-3 locale" id="sponsors-title-es">Patrocinadores</h4>
+      <h4 class="display-3 fw-bold lead mb-3 locale" id="sponsors-title-en">Sponsors</h4>
       <div class="heading-line mb-5"></div>
     </div>
   </div>
   <!-- START THE CAMPANIES CONTENT  -->
   <div class="container">
     <div class="row text-center">
-      <p class="lh-lg">¡Estamos buscando patrocinadores! Si quieres saber más, ¡pulsa el botón de debajo y contacta con nosotros!</p>
+      <p class="lh-lg locale" id="call-action-sponsors-es">¡Estamos buscando patrocinadores! Si quieres saber más, ¡pulsa el botón de debajo y contacta con nosotros!</p>
+      <p class="lh-lg locale" id="call-action-sponsors-en">We're looking for sponsors! If you want to know more, click the button below and contact us!</p>
     </div>
   </div>
 
   <div class="container justify-content-center align-items-center d-flex">
-    <button type="button" class="rounded-pill btn-rounded border-primary" onClick="window.location.href='mailto:dscmalaga@gmail.com?subject=(DyploFest 2022)Información para participar como Sponsor&cc=dscgranada@gmail.com';">
+    <button type="button" class="rounded-pill btn-rounded border-primary locale" id="c4s-btn-es" onClick="window.location.href='mailto:dscmalaga@gmail.com?subject=(DyploFest 2022)Información para participar como Sponsor&cc=dscgranada@gmail.com';">
       ¡Conviértete en un sponsor!
+      <span>
+        <i class="fas fa-star"></i>
+      </span>
+    </button>
+    <button type="button" class="rounded-pill btn-rounded border-primary locale" id="c4s-btn-en" onClick="window.location.href='mailto:dscmalaga@gmail.com?subject=(DyploFest 2022)Info to collab as Sponsor&cc=dscgranada@gmail.com';">
+      Become a sponsor!
       <span>
         <i class="fas fa-star"></i>
       </span>
@@ -227,10 +274,13 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
   <div class="container">
     <div class="row text-center text-white">
-      <h1 class="display-3 fw-bold">El lugar</h1>
+      <h1 class="display-3 fw-bold locale" id="venue-title-es">El lugar</h1>
+      <h1 class="display-3 fw-bold locale" id="venue-title-en">The Venue</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
-      <p class="lead pt-1">Escuela Técnica Superior de Ingeniería Informática</p>
-      <p class="lead ">Bulevar Louis Pasteur 35</p>
+      <p class="lead pt-1 locale" id="venue-name-es">Escuela Técnica Superior de Ingeniería Informática</p>
+      <p class="lead pt-1 locale" id="venue-name-en">School of Computer Science and Engineering</p>
+      <p class="lead locale" id="venue-street-es">Bulevar Louis Pasteur 35</p>
+      <p class="lead locale" id="venue-street-en">Louis Pasteur Boulevard 35</p>
       <p class="lead ">29071 Málaga</p>
       <div class="row align-items-center">
         <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=36.714927011092804,-4.478008013850054+(ETS%20de%20Ingenier%C3%ADa%20Inform%C3%A1tica)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"><a href="https://www.gps.ie/marine-gps/">navigation gps</a></iframe></div>
@@ -321,10 +371,14 @@
   <div class="pt-2 mt-2"></div>
   <div class="container">
     <div class="row text-center">
-      <h1 class="display-3 fw-bold text-capitalize">¿Cómo puedo participar?</h1>
+      <h1 class="display-3 fw-bold text-capitalize locale" id="collab-title-es">¿Cómo puedo participar?</h1>
+      <h1 class="display-3 fw-bold text-capitalize locale" id="collab-title-en">How can I collab?</h1>
       <div class="heading-line"></div>
-      <p class="lh-lg">
+      <p class="lh-lg locale" id="collab-head-es">
         Este evento aún necesita vuestra colaboración para que esté en marcha, así que si queréis apoyar a la causa, tenéis maneras de hacerlo. 
+      </p>
+      <p class="lh-lg locale" id="collab-head-en">
+        The event needs your collaboration to keep it up, so if you want to help us, you can apport with many ways.
       </p>
     </div>
 
@@ -332,43 +386,78 @@
     <div class="row">
       <div class="col-12 col-lg-6 gradient shadow p-3 text-white">
         <div class="cta-info w-100">
-          <h4 class="display-4 fw-bold">¡Anímate a dar una charla!</h4>
-          <p class="lh-lg">
+          <h4 class="display-4 fw-bold locale" id="do-talks-title-es">¡Anímate a dar una charla!</h4>
+          <h4 class="display-4 fw-bold locale" id="do-talks-title-en">Cheer up and make a talk!</h4>
+          <p class="lh-lg locale" id="do-talks-info-es">
             Si eres de Málaga o puedes venir y tienes algo que enseñar al mundo, ¡aprovecha y anímate a dar una charla!
             Lo principal en un evento es tener contenidos que podamos mostrar al público, por lo que tu propuesta será bien recibida.
           </p>
-          <h3 class="display-3--brief">¿Qué tipo de charlas?</h3>
-          <ul class="cta-info__list">
+          <p class="lh-lg locale" id="do-talks-info-en">
+            If you have something to show to the attenders, come and give a lecture!
+            The main point of an event is to have content to show to the public, so any submission
+            will be welcome.
+          </p>
+          <h3 class="display-3--brief locale" id="do-talks-type-title-es">¿Qué tipo de charlas?</h3>
+          <h3 class="display-3--brief locale" id="do-talks-type-title-en">So... What kind of talks?</h3>
+          <ul class="cta-info__list locale" id="do-talks-list-es">
             <li>Diseño de Interfaces de Usuario y Accesibilidad</li>
             <li>Tecnologías Frontend y de Desarrollo de Aplicaciones</li>
             <li>Herramientas de apoyo a estas</li>
             <li>Interfaces de Usuario no gráficas : Chatbots, Sensores y actuadores...</li>
           </ul>
+          <ul class="cta-info__list locale" id="do-talks-list-en">
+            <li>GUI design and accessibility</li>
+            <li>Frontend technology and app development</li>
+            <li>Non graphic GUI: Chatbots, Sensors, actuators...</li>
+          </ul>
           <div class="container justify-content-center align-items-center d-flex mt-2">
-            <button type="button" class="rounded-pill btn-rounded" onClick="window.location.href = 'https://sessionize.com/dyplofest-2022/';">
+            <button type="button" class="rounded-pill btn-rounded locale" id="send-c4p-proposal-es" onClick="window.location.href = 'https://sessionize.com/dyplofest-2022/';">
               ¡Envía tu propuesta!
               <span>
                 <i class="fas fa-paper-plane"></i>
               </span>
             </button>
+
+            <button type="button" class="rounded-pill btn-rounded locale" id="send-c4p-proposal-en" onClick="window.location.href = 'https://sessionize.com/dyplofest-2022/';">
+              Send us your proposal!
+              <span>
+                <i class="fas fa-paper-plane"></i>
+              </span>
+            </button>
+            
           </div>
           
         </div>
       </div>
       <div class="col-12 col-lg-6 bg-white shadow p-3">
         <div class="cta-info w-100 pb-2">
-          <h4 class="display-2--title mb-1">O apúntate como voluntario</h4>
-          <p class="lh-lg">
+          <h4 class="display-2--title mb-1 locale" id="volunteer-title-es">O apúntate como voluntario</h4>
+          <h4 class="display-2--title mb-1 locale" id="volunteer-title-en">Or sign up as a volunteer</h4>
+          <p class="lh-lg locale" id="volunteer-info-es">
             Si eres de Málaga y quieres echarnos una mano para que todo vaya viento en popa, puedes rellenar este formulario
             para que nos pongamos en contacto contigo.
           </p>
-          <p>
+          <p class="lh-lg locale" id="volunteer-info-2-es">
             De antemano, ¡muchas gracias!
           </p>
 
+          <p class="lh-lg locale" id="volunteer-info-en">
+            If you are from Malaga and you want to help us to make everything go well, you can fill
+            this form to let us contact you.
+          </p>
+          <p class="lh-lg locale" id="volunteer-info-2-en">
+            Many thanks in advance!
+          </p>
+
           <div class="container justify-content-center align-items-center d-flex mt-3">
-            <button type="button" class="border-primary rounded-pill btn-rounded" onClick="window.location.href = 'https://forms.gle/cdUsxJkBsVXHgTqW9';">
+            <button type="button" class="border-primary rounded-pill btn-rounded locale" id="volunteer-button-es" onClick="window.location.href = 'https://forms.gle/cdUsxJkBsVXHgTqW9';">
               ¡Sé un voluntario!
+              <span>
+                <i class="fas fa-user"></i>
+              </span>
+            </button>
+            <button type="button" class="border-primary rounded-pill btn-rounded locale" id="volunteer-button-en" onClick="window.location.href = 'https://forms.gle/cdUsxJkBsVXHgTqW9';">
+              Be a volunteer!
               <span>
                 <i class="fas fa-user"></i>
               </span>
@@ -414,16 +503,20 @@
         <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
       </div>
       <div class="col-12 col-sm-12 col-lg-2 footer-bottom__copyright">
-        <a href="https://events.withgoogle.com/spanish-gdgs-summit-2017/code-of-conduct/#content">Código de conducta</a>
+        <a class="locale" id="footer-code-conduct-es" href="https://events.withgoogle.com/spanish-gdgs-summit-2017/code-of-conduct/#content">Código de conducta</a>
+        <a class="locale" id="footer-code-conduct-en" href="https://events.withgoogle.com/spanish-gdgs-summit-2017/code-of-conduct/#content">Code of conduct</a>
       </div>
       <div class="col-12 col-sm-12 col-lg-2 footer-bottom__copyright">
-        <a href="https://sessionize.com/dyplofest-2022/">Call for Papers / Sé un speaker</a>
+        <a class="locale" id="footer-c4p-es" href="https://sessionize.com/dyplofest-2022/">Call for Papers / Sé un speaker</a>
+        <a class="locale" id="footer-c4p-en" href="https://sessionize.com/dyplofest-2022/">Call for Papers / Be a speaker</a>
       </div>
       <div class="col-12 col-sm-12 col-lg-2 footer-bottom__copyright">
-        <a href="https://forms.gle/cdUsxJkBsVXHgTqW9">Call for Volunteers / Sé un voluntario</a>
+        <a class="locale" id="footer-c4v-es" href="https://forms.gle/cdUsxJkBsVXHgTqW9">Call for Volunteers / Sé un voluntario</a>
+        <a class="locale" id="footer-c4v-en" href="https://forms.gle/cdUsxJkBsVXHgTqW9">Call for Volunteers / Be a volunteer</a>
       </div>
       <div class="col-12 col-sm-12 col-lg-2 footer-bottom__copyright">
-        <a href="mailto:dscmalaga@gmail.com?subject=(DyploFest 2022)Información para participar como Sponsor&cc=dscgranada@gmail.com">Call for Sponsors / Conviértete en Sponsor</a>
+        <a class="locale" id="footer-c4s-es" href="mailto:dscmalaga@gmail.com?subject=(DyploFest 2022)Información para participar como Sponsor&cc=dscgranada@gmail.com">Call for Sponsors / Conviértete en Sponsor</a>
+        <a class="locale" id="footer-c4s-en" href="mailto:dscmalaga@gmail.com?subject=(DyploFest 2022)Info to collab as Sponsor&cc=dscgranada@gmail.com">Call for Sponsors / Become a Sponsor</a>
       </div>
     </div>
   </div>
@@ -433,10 +526,15 @@
     <div class="container">
       <div class="row text-center text-white">
         <div class="col-12">
-          <div class="footer-bottom__copyright">
+          <div class="footer-bottom__copyright locale" id="footer-copyright-es">
             &COPY; Copyright 2022 <a href="https://linktr.ee/gdscuma">GDSC Málaga</a> | Creado con 💚 por <a href="https://developer-student-clubs-ugr.github.io/WebTemplate2021/" target="_blank">GDSC Granada</a><br><br>
 
             Basado en el tema Patrix de <a href="http://themewagon.com" target="_blank">ThemeWagon</a>
+          </div>
+          <div class="footer-bottom__copyright locale" id="footer-copyright-en">
+            &COPY; Copyright 2022 <a href="https://linktr.ee/gdscuma">GDSC Málaga</a> | Made with 💚 by <a href="https://developer-student-clubs-ugr.github.io/WebTemplate2021/" target="_blank">GDSC Granada</a><br><br>
+
+            Based on Patrix theme from <a href="http://themewagon.com" target="_blank">ThemeWagon</a>
           </div>
         </div>
       </div>

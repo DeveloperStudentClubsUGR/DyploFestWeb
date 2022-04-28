@@ -11254,6 +11254,10 @@ textarea.form-control-lg {
   background: linear-gradient(to right, rgba(24, 140, 14, 0.95), rgba(26, 218, 106, 0.95));
 }
 
+.locale {
+  display: none;
+}
+
 .menu {
   background-color: #fff;
 }
