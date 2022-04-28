@@ -1,6 +1,10 @@
 @use '../custom' as *;
 @use '../components/mixins' as *;
 
+.locale{
+  display: none;
+}
+
 .menu {
   
     background-color: $white;
