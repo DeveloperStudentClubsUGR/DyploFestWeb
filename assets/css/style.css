@@ -11254,10 +11254,6 @@ textarea.form-control-lg {
   background: linear-gradient(to right, rgba(24, 140, 14, 0.95), rgba(26, 218, 106, 0.95));
 }
 
-.locale {
-  display: none;
-}
-
 .menu {
   background-color: #fff;
 }
@@ -11402,6 +11398,20 @@ textarea.form-control-lg {
 .testimonials__name p {
   padding-bottom: 2rem;
   text-transform: capitalize;
+}
+
+.speaker-profile {
+  background-color: #1ada6a95;
+  padding-top: 2%;
+}
+
+.speaker-desc {
+  padding-top: 5px;
+}
+
+.social-links a > i {
+  color: #052e05;
+  font-size: 20px;
 }
 
 .portfolio {
