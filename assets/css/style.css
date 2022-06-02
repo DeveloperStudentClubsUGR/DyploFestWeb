@@ -11400,6 +11400,20 @@ textarea.form-control-lg {
   text-transform: capitalize;
 }
 
+.speaker-profile {
+  background-color: #1ada6a95;
+  padding-top: 2%;
+}
+
+.speaker-desc {
+  padding-top: 5px;
+}
+
+.social-links a > i {
+  color: #052e05;
+  font-size: 20px;
+}
+
 .portfolio {
   padding: 4rem 0;
 }
